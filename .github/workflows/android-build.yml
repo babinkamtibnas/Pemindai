@@ -1,0 +1,48 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Audit Anti-tracker
+      run: |
+        if grep -Ei "firebase|analytics|mixpanel|google.gms" app/build.gradle; then
+          echo "Tracker libraries detected in build.gradle!"
+          exit 1
+        fi
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Build with Gradle
+      run: ./gradlew assembleRelease
+
+    - name: Strict Size Constraint Check
+      run: |
+        APK_PATH=$(find app/build/outputs/apk/release -name "*.apk" | head -n 1)
+        SIZE=$(stat -c%s "$APK_PATH")
+        MAX_SIZE=$((2 * 1024 * 1024))
+        echo "APK Size: $SIZE bytes"
+        if [ "$SIZE" -gt "$MAX_SIZE" ]; then
+          echo "APK size exceeds 2MB limit!"
+          exit 1
+        fi
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: release-apk
+        path: app/build/outputs/apk/release/*.apk

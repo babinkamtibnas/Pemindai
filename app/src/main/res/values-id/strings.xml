@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Pemindai</string>
+    <string name="scan_camera">Pindai Kamera</string>
+    <string name="pick_image">Pilih Gambar</string>
+    <string name="copy_text">Salin Teks</string>
+    <string name="open_link">Buka Tautan</string>
+    <string name="connect_wifi">Sambungkan ke Wi-Fi</string>
+    <string name="history">Riwayat</string>
+    <string name="result">Hasil</string>
+    <string name="no_result">Kode QR tidak ditemukan</string>
+    <string name="copied">Disalin ke papan klip</string>
+    <string name="wifi_connecting">Menyambungkan ke Wi-Fi...</string>
+    <string name="error_scan">Pemindaian gagal</string>
+    <string name="toggle_theme">Ganti Tema</string>
+</resources>

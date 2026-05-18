@@ -1,0 +1,13 @@
+<resources>
+    <attr name="backgroundColor" format="color" />
+    <attr name="textColorPrimary" format="color" />
+    <attr name="textColorSecondary" format="color" />
+    <attr name="borderColor" format="color" />
+
+    <style name="Theme.Pemindai" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">#000000</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">#000000</item>
+        <item name="android:windowBackground">?attr/backgroundColor</item>
+    </style>
+</resources>

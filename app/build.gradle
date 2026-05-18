@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.pemindai'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.pemindai"
+        minSdk 28
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+}

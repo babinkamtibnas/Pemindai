@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Pemindai</string>
+    <string name="scan_camera">Scan Camera</string>
+    <string name="pick_image">Choose Image</string>
+    <string name="copy_text">Copy Text</string>
+    <string name="open_link">Open Link</string>
+    <string name="connect_wifi">Connect to Wi-Fi</string>
+    <string name="history">History</string>
+    <string name="result">Result</string>
+    <string name="no_result">No QR code found</string>
+    <string name="copied">Copied to clipboard</string>
+    <string name="wifi_connecting">Connecting to Wi-Fi...</string>
+    <string name="error_scan">Scanning failed</string>
+    <string name="toggle_theme">Toggle Theme</string>
+</resources>

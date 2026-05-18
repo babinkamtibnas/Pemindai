@@ -152,11 +152,6 @@ public class MainActivity extends AppCompatActivity {
 
         if (ssid.isEmpty()) return;
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 100);
-            return;
-        }
-
         WifiManager wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
